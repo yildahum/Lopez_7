@@ -1,0 +1,93 @@
+var Shark, Unicorn, LeftCat, Duck, Moose, RightCat, Frog, Cat;
+
+
+whenSetup(function () {
+  setBackgroundEffect("spiral", "rave");
+  for (var count = 0; count < 10; count++) {
+      executionInfo.checkTimeout(); if (executionInfo.isTerminated()){return;}
+    makeNewDanceSprite("DUCK", 'RpM,N#oYRsm[L@0;P+sm', {x: 200, y: 100});
+    makeNewDanceSprite("FROG", '%VpE$L)Qu2M56b(+Jm;l', {x: 200, y: 100});
+  }
+  layoutSprites(sprites, "circle");
+  makeNewDanceSprite("CAT", 'wa@i!7Bw*PI$Wr@ndns`', {x: 200, y: 200});
+  changeMoveEachLR(sprites, MOVES.ClapHigh, -1);
+});
+
+whenKey("left", function () {
+  doMoveEachLR(sprites, MOVES.Dab, -1);
+});
+
+whenKey("right", function () {
+  doMoveEachLR(sprites, MOVES.Dab, 1);
+});
+
+whenKey("down", function () {
+  doMoveEachLR(sprites, MOVES.Drop, -1);
+});
+
+atTimestamp(4, "measures", function () {
+  setBackgroundEffect("disco", "rave");
+  setVisibleEach(sprites, false);
+  makeNewDanceSpriteGroup(12, "UNICORN", "border");
+  makeNewDanceSprite("MOOSE", 'lxey(HoxI#rIPr`RKrx-', {x: 200, y: 200});
+  changeMoveEachLR(sprites, MOVES.Fresh, -1);
+});
+
+atTimestamp(6, "measures", function () {
+  setBackgroundEffect("diamonds", "rave");
+  makeNewDanceSprite("UNICORN", '@~HomQ9Jy?,khgZ|0E*:', {x: 200, y: 200});
+  setVisible('lxey(HoxI#rIPr`RKrx-', false);
+  changeMoveEachLR(sprites, MOVES.Roll, -1);
+});
+
+atTimestamp(8, "measures", function () {
+  changeMoveEachLR(sprites, MOVES.Drop, -1);
+});
+
+atTimestamp(10, "measures", function () {
+  setBackgroundEffect("splatter", "rave");
+  setVisible('@~HomQ9Jy?,khgZ|0E*:', false);
+  makeNewDanceSprite("SHARK", '${9XXAPVe7]tlsb(Di}.', {x: 200, y: 200});
+  changeMoveEachLR(sprites, MOVES.Clown, -1);
+});
+
+atTimestamp(12, "measures", function () {
+  setBackgroundEffect("swirl", "rave");
+  makeNewDanceSprite("CAT", 'P7UxU5vN1It8wsjkZ^Ju', {x: 100, y: 200});
+  setProp('P7UxU5vN1It8wsjkZ^Ju', "scale", 50);
+  makeNewDanceSprite("CAT", '1+zx.Q{;+qSYMp$.e+6K', {x: 300, y: 200});
+  setProp('1+zx.Q{;+qSYMp$.e+6K', "scale", 50);
+  changeMoveEachLR(sprites, MOVES.Floss, -1);
+});
+
+atTimestamp(14, "measures", function () {
+  setBackgroundEffect("color_cycle", "rave");
+  setProp('P7UxU5vN1It8wsjkZ^Ju', "scale", 100);
+  setProp('1+zx.Q{;+qSYMp$.e+6K', "scale", 100);
+  changeMoveEachLR(sprites, MOVES.DoubleJam, -1);
+});
+
+atTimestamp(16, "measures", function () {
+  setForegroundEffect("spotlight");
+  setVisibleEach("SHARK", true);
+  setVisibleEach("FROG", true);
+  layoutSprites("FROG", "x");
+});
+
+atTimestamp(18, "measures", function () {
+  setVisible('${9XXAPVe7]tlsb(Di}.', false);
+  setForegroundEffect("none");
+  setBackground('#000000');
+  startMapping('P7UxU5vN1It8wsjkZ^Ju', "tint", "mid");
+  startMapping('1+zx.Q{;+qSYMp$.e+6K', "tint", "mid");
+  changeMoveEachLR(sprites, MOVES.Kick, -1);
+  changeMoveLR('P7UxU5vN1It8wsjkZ^Ju', MOVES.Kick, 1);
+});
+
+atTimestamp(20, "measures", function () {
+  setVisibleEach(sprites, false);
+  setBackground('#cc0000');
+  setVisible('lxey(HoxI#rIPr`RKrx-', true);
+  setProp('lxey(HoxI#rIPr`RKrx-', "scale", 125);
+  changeMoveLR('lxey(HoxI#rIPr`RKrx-', MOVES.ClapHigh, -1);
+});
